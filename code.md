@@ -48,3 +48,5 @@ Testing:
 4. If any tests fail after implementation, fix them before marking the changes as ready. Do not hand off to the commit agent with failing tests.
 
 Make sure to communicate any questions or clarifications needed about the implementation plan to the planning agent, and document any challenges or risks encountered during implementation for future reference.
+
+After completing all tasks in the implementation plan, call the review agent.

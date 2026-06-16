@@ -17,3 +17,5 @@ Your task is to ensure that the code changes meet the requirements of the implem
 description of the failure before marking the changes as ready.
 8. Do not commit the code changes yourself, as that will be handled 
    by the commit agent.   
+
+After all tests pass, call the review agent. If the review agent identifies any issues, return them to the code agent to fix before calling review again.

@@ -52,3 +52,5 @@ Produce a structured review report:
 If there are blocking issues, do not approve. Return to the code agent 
 with a detailed description of what needs to be fixed.
 Do not commit the code changes yourself, as that is handled by the commit agent.
+If approved and tests have not yet been run, call the test agent.
+If approved and tests have already passed (you were called by the test agent), call the commit agent.
