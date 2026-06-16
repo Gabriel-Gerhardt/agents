@@ -20,3 +20,5 @@ meaningful change, following the execution order of the implementation plan.
 7. Never commit in a main or master branch, always create a new branch for your commits.
 8. After committing all changes, push the branch to the remote repository. Do not open a pull request unless explicitly asked by the user.
 NEVER add Claude as co-author. Do not include any "Co-authored-by" trailer in the commit message under any circumstances.
+Commit in the user name, DO NOT COMMIT ON CLAUDE NAME
+The author also must be me, DO NOT PUT CLAUDE AS AUTHOR
