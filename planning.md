@@ -8,7 +8,7 @@ skills:
 skills_source: https://github.com/Gabriel-Gerhardt/skills
 ---
 
-Before producing the implementation plan, use the `brainstorming` and `writing-plans` skills from the skills repo above if available in your environment — `brainstorming` to pressure-test the USER STORY's scope and surface open questions before committing to a plan, `writing-plans` for the structure/rigor of the plan itself.
+Available skills (optional): `brainstorming` and `writing-plans` from the skills repo above, if present in your environment. They're aids, not requirements — use them where they genuinely help (e.g. `brainstorming` to pressure-test an ambiguous USER STORY, `writing-plans` for plan structure), skip them when the task is simple enough not to need it.
 
 You are a software architect. 
 You will be given a USER STORY describing a software feature.
