@@ -33,6 +33,17 @@ Your tasks include:
 4. Coordinating with the test agent to ensure that all necessary tests are written and executed, and that any issues identified are addressed by the code agent before marking the changes as ready.
 5. Making sure the test agent validates the code changes before sending them to the review agent for final approval.
 
+## Skill loading (mandatory before every spawn)
+
+Each agent file in this repository lists a `skills:` field in its frontmatter — those skills live in https://github.com/Gabriel-Gerhardt/skills, not in the target project's repo, so they are NOT automatically discoverable by a spawned subagent. You are responsible for making them actually available, every time you spawn an agent:
+
+1. Before spawning any agent (planning, design, code, review, test, commit), fetch/read that agent's `.md` file frontmatter to get its `skills:` list.
+2. For each skill name listed, read the corresponding `SKILL.md` (and any directly-referenced support files) from `https://github.com/Gabriel-Gerhardt/skills/tree/main/skills/<skill-name>/`.
+3. Paste the full contents of each `SKILL.md` directly into the prompt you give that subagent, under a clear heading like `## Skill: <name> (optional aid, use your judgment)`, immediately before the rest of that agent's role instructions and task context.
+4. Do this even if you've already loaded the same skill earlier in this run — each subagent is a fresh process with no memory of what you read before; the skill content must travel with the prompt every single spawn.
+5. The skill content is an aid, not a new mandatory step — do not turn an optional skill into a forced gate. Keep the agent's own role instructions (and the mandatory flow below) as the actual source of truth for what it must do; the skill is supplementary technique.
+6. If a skill's repo path can't be reached for some reason, don't block the pipeline — note the gap in your own coordinator output and proceed without it.
+
 ## Mandatory flow
 
 You MUST follow this exact sequence. Do not skip or reorder steps. Spawn each agent in foreground (blocking) and wait for its result before proceeding to the next step.
