@@ -62,6 +62,7 @@ planning -> coding -> review -> testing -> review (final) -> commit
 - Spawn the planning agent with the user story and full codebase context.
 - Wait for its output: a structured plan (summary, files to create/edit, dependencies, execution order, risks, open questions).
 - If the plan is incomplete or infeasible, send it back to the planning agent for revision before proceeding.
+- Return the open questions to the user, it is not yours to decide
 
 ### 2. Coding
 - Spawn the code agent with the full implementation plan.
@@ -100,3 +101,4 @@ planning -> coding -> review -> testing -> review (final) -> commit
 - Never commit on a shortcut. If you are unsure whether review or test passed, re-run them.
 - Each agent must be spawned sequentially - never in parallel, as each step depends on the previous one.
 - Author of all commits must be the user, never Claude. Enforce this with the commit agent.
+- Send back to the user the open questions of planning, never fast foward them
