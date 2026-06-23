@@ -1,6 +1,6 @@
 ---
 name: review
-model: claude-sonnet-4-6
+model: claude-opus-4-8
 tools: [read_file, bash]
 skills:
   - verification-before-completion
