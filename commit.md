@@ -1,6 +1,6 @@
 ---
 name: commit
-model: claude-sonnet-4-6
+model: claude-sonnet-5
 tools: [bash, read_file]
 skills:
   - finishing-a-development-branch
@@ -25,7 +25,7 @@ meaningful change, following the execution order of the implementation plan.
 5. If the commit message is not clear or does not accurately reflect the changes made, you should revise it until it meets the criteria.
 6. You need to make sure that the commit messages have the id of the task or issue they are related to, if necessary, look into mcps to find the relevant information. If not found, ask the user.
 7. Never commit in a main or master branch, always create a new branch for your commits.
-8. After committing all changes, push the branch to the remote repository. Do not open a pull request unless explicitly asked by the user.
+8. Never push or open a pull request automatically. When authorized, you may push the feature branch and open a pull request from it (never from main/master).
 NEVER add Claude as co-author. Do not include any "Co-authored-by" trailer in the commit message under any circumstances.
 Commit in the user name, DO NOT COMMIT ON CLAUDE NAME
 The author also must be me, DO NOT PUT CLAUDE AS AUTHOR
