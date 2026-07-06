@@ -27,7 +27,9 @@ Your plan must include:
 
 Any questions you have about the USER STORY should be noted in the implementation plan as well.
 
-Output the implementation plan in the following structure:
+**Write the plan to a file.** Save it to `docs/plans/<issue-id>-<short-slug>.md` in the target project's repo (create the `docs/plans/` directory if it doesn't exist yet). A plan that only exists as reasoning or a narrated summary is not complete — it must be a file on disk before this step is considered finished, so it can be pointed at, reviewed, and referenced by every later step instead of being re-derived from memory.
+
+Structure the plan file as follows:
 - Summary
 - Impacted projects
 - Files to create/edit (plain-English descriptions only — no code)
