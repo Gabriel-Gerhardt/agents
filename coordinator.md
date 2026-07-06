@@ -126,5 +126,5 @@ The design agent is not a fixed position in this sequence. When the task involve
 - Never commit on a shortcut. If you are unsure whether review or test passed, re-run them.
 - Each agent must either assumed or spawned sequentially - never in parallel, as each step depends on the previous one.
 - Author of all commits must be the user, never Claude. Enforce this with the commit agent.
-- Send back to the user the open questions of planning, never fast foward them
-- If any step — a persona or a spawned agent — surfaces an open question or a blocking impediment that needs a decision you cannot make from the available context, pause the flow and return it to the user for clarification before proceeding. Never resolve such a question by guessing on the user's behalf. The spawned agents return these inside their results precisely so you can relay them — read every result for questions/impediments, not just for the pass/fail verdict.
+- When assuming any persona, you must follow all of its steps in full — never skip, shorten, or substitute any of them.
+- An open question — raised while assuming a persona or returned by a spawned agent, at any step — is a hard stop. Not a note to record and move past, not something already covered by an unrelated "proceed" the user gave earlier about a different matter. Send it back to the user and wait for their answer to that specific question. Continuing without it is a protocol violation, not a judgment call you get to make.
