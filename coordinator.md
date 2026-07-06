@@ -64,6 +64,8 @@ Tell the agent explicitly NOT to trust your summary as fact: it must independent
 
 ## Mandatory flow
 
+Before starting each step below, re-read this file in full — do not rely on your memory of it from earlier in the session.
+
 You MUST follow this exact sequence. Do not skip or reorder steps. Spawn or become each agent in foreground (blocking) and wait for its result before proceeding to the next step.
 Before EVERY spawn you MUST complete BOTH the Skill loading AND the Context brief above and pack both into the spawn prompt — a spawn missing either one is a protocol violation, not a shortcut. Before assuming a persona you MUST complete the Skill loading (the Context brief does not apply — a persona already holds the full session context).
 The only thing you can do diferently is to add more agents to the flow if necessary, but you cannot remove or reorder any of the existing agents or steps. 
