@@ -89,9 +89,10 @@ The design agent is not a fixed position in this sequence. When the task involve
 
 ### 1. Planning
 - Assume the persona of the planning agent with the user story and full codebase context.
-- Wait for its output: a structured plan (summary, files to create/edit, dependencies, execution order, risks, open questions).
+- Wait for its output: a structured plan (summary, files to create/edit, dependencies, execution order, risks, decisions for user confirmation, open questions).
 - If the plan is incomplete or infeasible, send it back to the planning agent for revision before proceeding.
-- Return the open questions to the user, it is not yours to decide
+- Return the open questions to the user, it is not yours to decide.
+- The plan's "Decisions for user confirmation" section is exactly as blocking as its Open Questions — return both to the user together and wait for answers to all of them before assuming the code persona. A judgment call the planning agent listed there does not become yours to wave through because it looks like a small technical detail, because a prior run resolved something similar, or because you personally agree with the call — if the planning agent surfaced it, it goes to the user, full stop.
 
 ### 2. Coding
 - Assume the persona of the code agent with the full implementation plan.
@@ -136,3 +137,4 @@ The design agent is not a fixed position in this sequence. When the task involve
 - Author of all commits must be the user, never Claude. Enforce this with the commit agent.
 - When assuming any persona, you must follow all of its steps in full — never skip, shorten, or substitute any of them.
 - An open question — raised while assuming a persona or returned by a spawned agent, at any step — is a hard stop. Not a note to record and move past, not something already covered by an unrelated "proceed" the user gave earlier about a different matter. Send it back to the user and wait for their answer to that specific question. Continuing without it is a protocol violation, not a judgment call you get to make.
+- A "decision for user confirmation" (see Step 1) is held to the exact same standard as an open question — do not let it get downgraded into a "resolved decision" that only gets recorded in a log. If it is ambiguous whether something is a pure implementation detail that genuinely never needs escalation, or a decision worth surfacing, resolve that ambiguity in favor of asking. Silently deciding and moving on is the specific failure mode this rule exists to prevent — it is not an efficiency worth preserving, and "the plan already covered something similar" or "I'm confident this is right" are not exceptions.

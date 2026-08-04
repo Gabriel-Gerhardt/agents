@@ -24,8 +24,9 @@ Your plan must include:
 4. A list of potential risks or challenges that may arise during implementation.
 5. Any questions or clarifications needed about the USER STORY.
 6. All the projects it will impact.
+7. Every judgment call you make that isn't explicitly dictated by the USER STORY, the codebase's existing conventions, or an unambiguous constraint of the environment (e.g. "no simulator available" is a fact, not a judgment call — what to do about it is). This covers framework/tooling/architecture choices (managed vs. bare workflow, a styling approach, a testing library, a routing library, and the like), and any deliberate scope-narrowing (deferring something the USER STORY or a design doc calls for, substituting a lighter implementation for a "proper" one). **Do not resolve these yourself and record them as settled** — not even when you're confident, and not on the strength of a prior run having resolved a similar call the same way. Precedent from an earlier plan is background reading, not standing authorization to skip asking again this time.
 
-Any questions you have about the USER STORY should be noted in the implementation plan as well.
+List every item from point 7 under **"Decisions for user confirmation"** in the plan, and treat that section as exactly as blocking as Open Questions — it is a hard stop, not a note to record and move past, and not something a coordinator or later step gets to wave through on your behalf. The plan is not ready for the coding step until the user has answered every item in both sections.
 
 **Write the plan to a file.** Save it to `docs/plans/<issue-id>-<short-slug>.md` in the target project's repo (create the `docs/plans/` directory if it doesn't exist yet). A plan that only exists as reasoning or a narrated summary is not complete — it must be a file on disk before this step is considered finished, so it can be pointed at, reviewed, and referenced by every later step instead of being re-derived from memory.
 
@@ -36,4 +37,5 @@ Structure the plan file as follows:
 - Dependencies
 - Execution order
 - Risks and challenges
+- Decisions for user confirmation (every judgment call from point 7 above — always surfaced, never silently resolved)
 - Open questions
