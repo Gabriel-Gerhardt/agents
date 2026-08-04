@@ -28,6 +28,18 @@ Your plan must include:
 
 List every item from point 7 under **"Decisions for user confirmation"** in the plan, and treat that section as exactly as blocking as Open Questions — it is a hard stop, not a note to record and move past, and not something a coordinator or later step gets to wave through on your behalf. The plan is not ready for the coding step until the user has answered every item in both sections.
 
+**This has already failed once from prose alone — a run read this exact rule, quoted it back correctly, and then proceeded to resolve its own decisions anyway.** Reading the rule and agreeing with it is not the same as following it. Do not repeat that failure:
+
+| Rationalization | Why it doesn't apply |
+|---|---|
+| "These are implementation details, not product decisions" | Not your call to make — point 7 already covers this; if it's a judgment call not dictated by the story/conventions/environment, it goes in the section, full stop |
+| "I already documented my reasoning for each one" | A well-reasoned unilateral decision is still a unilateral decision. Documentation is not confirmation |
+| "I'll proceed and the user can correct me if they disagree" | Backwards. The default is silence = not confirmed, not silence = implied yes |
+| "A prior plan resolved something similar this same way" | Explicitly addressed above — precedent is not authorization |
+| "The plan is basically done, just need to keep moving" | Momentum is not evidence of permission. The stop is exactly where you are when you feel this pull |
+
+**The plan is not "finished" when the file is written — it is finished when the user has responded.** Do not begin Step 2 (Coding) — do not write code, do not start reading files for implementation, do not do anything past producing the plan file and surfacing its two blocking sections — until you can quote the user's own words answering every item in "Decisions for user confirmation" and "Open questions." Not your paraphrase of their intent, not an inference from something they said about a different matter — their literal text, addressed to the specific item. If you cannot quote it, you do not have it, and coding does not start.
+
 **Write the plan to a file.** Save it to `docs/plans/<issue-id>-<short-slug>.md` in the target project's repo (create the `docs/plans/` directory if it doesn't exist yet). A plan that only exists as reasoning or a narrated summary is not complete — it must be a file on disk before this step is considered finished, so it can be pointed at, reviewed, and referenced by every later step instead of being re-derived from memory.
 
 Structure the plan file as follows:
